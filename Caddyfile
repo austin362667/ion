@@ -27,7 +27,7 @@ lattemall.company {
 
 # proxy for wss://lattemall.company:5551
 # 代理信令wss://lattemall.company:5551
-lattemall.company:5551
+# lattemall.company:5551
 
 # i run biz on 5552, modify port in biz.toml
 # 因为5551被代理使用，所以biz端口换5552
