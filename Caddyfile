@@ -9,10 +9,10 @@ lattemall.company:443 {
 
 
 lattemall.company {
-   proxy / localhost:8080 {
+   reverse_proxy / localhost:8080 {
         transparent
    }
-   proxy /wss https://localhost:443 {
+   reverse_proxy /wss https://localhost:443 {
         websocket
    }
 }
