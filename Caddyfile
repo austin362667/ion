@@ -3,7 +3,7 @@
 
 # proxy for https://lattemall.company
 # 代理ion-web-app页面
-lattemall.company:443 {
+lattemall.company:80 {
     reverse_proxy localhost:8080 {
         header_up Host {host}
         header_up X-Real-IP {remote_host}
