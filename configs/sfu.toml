@@ -73,7 +73,7 @@ mdns = true
 # if the sfu is deployed in a DMZ between two 1-1 NAT for internal and
 # external users.
 nat1to1 = ["66.228.52.222"]
-# icelite = true
+icelite = true
 
 [turn]
 # Enables embeded turn server
