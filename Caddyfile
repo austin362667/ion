@@ -1,8 +1,5 @@
 # redirect from www.lattemall.company to https://lattemall.company
 # 这里把www.lattemall.company重定向到https://lattemall.company
-www.lattemall.company {
-	redir https://lattemall.company{uri}
-}
 
 # proxy for https://lattemall.company
 # 代理ion-web-app页面
