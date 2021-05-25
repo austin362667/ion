@@ -3,23 +3,13 @@
 
 # proxy for https://lattemall.company
 # 代理ion-web-app页面
+lattemall.company:443 {
+    reverse_proxy localhost:8080
+}
+
 
 lattemall.company:80 {
-   reverse_proxy / localhost:80 {
-        header_up Host {host}
-        header_up X-Real-IP {remote_host}
-        header_up X-Forwarded-For {remote_host}
-        header_up X-Forwarded-Proto {scheme}
-   }
-}
-lattemall.company:443 {
-   reverse_proxy /wss localhost:443 {
-        header_up X-Real-IP {http.request.remote}
-        header_up X-Forwarded-For {http.request.remote}
-        header_up X-Forwarded-Proto {http.request.scheme}
-        header_up Connection {http.request.header.Connection}
-        header_up Upgrade {http.request.header.Upgrade}
-   }
+   reverse_proxy / localhost:8080
 }
 
 
@@ -35,6 +25,8 @@ reverse_proxy localhost:5552 {
     header_up X-Real-IP {remote_host}
     header_up X-Forwarded-For {remote_host}
     header_up X-Forwarded-Proto {scheme}
+    header_up Connection {http.request.header.Connection}
+    header_up Upgrade {http.request.header.Upgrade}
 }
 
 # caddy log
