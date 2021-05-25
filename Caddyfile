@@ -21,12 +21,7 @@ lattemall.company:5551 {
 # i run biz on 5552, modify port in biz.toml
 # 因为5551被代理使用，所以biz端口换5552
 # add header for ws
-reverse_proxy localhost:5552 {
-    header_up Host {host}
-    header_up X-Real-IP {remote_host}
-    header_up X-Forwarded-For {remote_host}
-    header_up X-Forwarded-Proto {scheme}
-}
+
 
 # caddy log
 # caddy 日志配置
