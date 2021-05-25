@@ -1,35 +1,30 @@
-# redirect from www.lattemall.company to https://lattemall.company
-# 这里把www.lattemall.company重定向到https://lattemall.company
-
 # proxy for https://lattemall.company
 # 代理ion-web-app页面
-lattemall.company:80 {
-    reverse_proxy localhost:8080 {
-        header_up Host {host}
-        header_up X-Real-IP {remote_host}
-        header_up X-Forwarded-For {remote_host}
-        header_up X-Forwarded-Proto {scheme}
-    }
+lattemall.company:443 {
+    reverse_proxy localhost:8080
 }
+
 
 # proxy for wss://lattemall.company:5551
 # 代理信令wss://lattemall.company:5551
-wss://lattemall.company:5551 {
-    reverse_proxy localhost:5552 {
-        header_up Host {host}
-        header_up X-Real-IP {remote_host}
-        header_up X-Forwarded-For {remote_host}
-        header_up X-Forwarded-Proto {scheme}
-        header_up Connection {http.request.header.Connection}
-        header_up Upgrade {http.request.header.Upgrade}
-    }
-}
+lattemall.company:5551
 
 # i run biz on 5552, modify port in biz.toml
 # 因为5551被代理使用，所以biz端口换5552
 # add header for ws
-
+reverse_proxy localhost:5552 {
+    header_up Host {host}
+    header_up X-Real-IP {remote_host}
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+}
 
 # caddy log
 # caddy 日志配置
-
+log {
+    output file /root/caddy/caddy.log {
+    	roll_size     100MiB
+    	roll_keep     3
+    }
+    level DEBUG
+}
