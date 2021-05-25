@@ -7,12 +7,6 @@ lattemall.company:443 {
     reverse_proxy localhost:8080
 }
 
-
-lattemall.company:80 {
-   reverse_proxy / localhost:8080
-}
-
-
 # proxy for wss://lattemall.company:5551
 # 代理信令wss://lattemall.company:5551
 lattemall.company:5551
