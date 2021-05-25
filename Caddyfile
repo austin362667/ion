@@ -8,6 +8,16 @@ lattemall.company:443 {
 }
 
 
+lattemall.company {
+   proxy / localhost:8080 {
+        transparent
+   }
+   proxy /wss https://localhost:443 {
+        websocket
+   }
+}
+
+
 # proxy for wss://lattemall.company:5551
 # 代理信令wss://lattemall.company:5551
 lattemall.company:5551
