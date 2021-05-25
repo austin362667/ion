@@ -7,7 +7,7 @@ www.lattemall.company {
 # proxy for https://lattemall.company
 # 代理ion-web-app页面
 lattemall.company:443 {
-    reverse_proxy localhost:9090
+    reverse_proxy localhost:8080
 }
 
 
