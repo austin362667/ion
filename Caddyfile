@@ -14,7 +14,7 @@ lattemall.company:80 {
 
 # proxy for wss://lattemall.company:5551
 # 代理信令wss://lattemall.company:5551
-lattemall.company:5551 {
+wss://lattemall.company:5551 {
     reverse_proxy localhost:5552 {
         header_up Host {host}
         header_up X-Real-IP {remote_host}
